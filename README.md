@@ -1,0 +1,2 @@
+# BetterDirsearchDictionary
+优化后的更好的Dirsearch字典
