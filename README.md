@@ -21,3 +21,13 @@ with open(output_file, "w", encoding="utf-8") as outfile:
         outfile.write(line.lstrip("."))
 print(f"处理完成！修改后的文件已保存为 {output_file}")
 ```
+#### 加.是有必要的
+以下内容复制自学校师傅的
+
+在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容
+以 index.php 为例：第一次产生的交换文件名为 .index.php.swp
+再次意外退出后，将会产生名为 .index.php.swo 的交换文件
+第三次产生的交换文件则为 .index.php.swn
+那为啥前面有点？
+似乎因为vim缓存是隐藏文件，所以我们需要再前面加上.，也就是.index.php.swp
+CTFHub技能树-备份文件下载-vim缓存这道题前面是有点的，就是.index.php.swp，有时候还真得带点。
